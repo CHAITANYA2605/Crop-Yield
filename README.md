@@ -1,136 +1,65 @@
-###Model Performance Analysis
+# Model Performance Analysis
 
-This repository contains the implementation of different machine learning models with and without regularization, as well as convolutional neural networks (CNNs), applied to a dataset. Below is a summary of the performance metrics and model configurations.
+This repository explores the performance of different machine learning models on a given dataset. We evaluate models with and without regularization, as well as Convolutional Neural Networks (CNNs).
 
-###Overview
+## Overview
 
-###Models Evaluated:
+## Models Evaluated:
 
 No Regularization Model
-
 Regularized Model
+No Regularization Model (using CNN)
+Regularized Model (using CNN)
+Key Metrics:
 
-No Regularization Model Using CNN
-
-Regularized Model Using CNN
-
-##Key Metrics:
-
-Mean Absolute Error (MAE): Measures the average magnitude of errors between predictions and actual values.
-
-Accuracy: Represents the proportion of correct predictions over total predictions.
-
-Loss: Indicates the performance of the model during training.
-
+Mean Absolute Error (MAE): Measures the average prediction error.
+Accuracy: Proportion of correct predictions.
+Loss: Model performance during training.
 Results Summary
 
-Model
+Model	MAE (Test)	Accuracy	Loss (Training)
+No Regularization Model	11.92	0.77%	29,716.20
+Regularized Model	13.28	0.77%	21,763.90
+No Regularization Model (using CNN)	15.04	0.77%	102,822.59
+Regularized Model (using CNN)	22.73	0.77%	161,529.11
 
-Test MAE
-
-Test Accuracy
-
-Loss
-
-Training MAE
-
-No Regularization Model
-
-11.92
-
-0.0086
-
-29,716.20
-
-13.67
-
-Regularized Model
-
-13.28
-
-0.0086
-
-21,763.90
-
-12.96
-
-No Regularization Model Using CNN
-
-15.04
-
-0.0086
-
-102,822.59
-
-18.02
-
-Regularized Model Using CNN
-
-22.73
-
-0.0086
-
-161,529.11
-
-28.86
-
+Export to Sheets
 Observations
 
-Accuracy:
-
-All models exhibit low accuracy (~0.77%) across configurations, suggesting that the task is challenging, or the dataset may require further preprocessing or feature engineering.
-
+Accuracy: All models exhibit low accuracy (~0.77%), indicating a challenging task or potential issues with the dataset (e.g., insufficient preprocessing, feature engineering).
 MAE:
-
-The lowest MAE is achieved by the No Regularization Model (11.92), though it may be prone to overfitting.
-
-Regularization introduces a slight increase in MAE (13.28) but can help generalization.
-
-Models using CNNs show higher MAE, potentially due to hyperparameter tuning or architecture optimization requirements.
-
-Loss:
-
-Regularization reduces the loss in non-CNN models but increases it in CNN-based models. This might indicate a need for fine-tuning regularization techniques.
-
+The No Regularization Model achieves the lowest MAE (11.92) but may overfit.
+Regularization slightly increases MAE (13.28) but improves generalization.
+CNN models have higher MAE, likely due to suboptimal hyperparameters or architecture.
+Loss: Regularization generally reduces loss in non-CNN models but increases it in CNN models, suggesting a need for fine-tuning regularization techniques.
 Repository Structure
 
 data/: Dataset used for training and testing.
-
-models/: Contains scripts for all models tested.
-
-results/: Includes logs and performance reports.
-
-README.md: Current file.
-
+models/: Scripts for all evaluated models.
+results/: Logs and performance reports.
+README.md: This file.
 How to Run
 
 Clone the repository:
 
+Bash
+
 git clone https://github.com/your-repo-name.git
 cd your-repo-name
-
 Install dependencies:
 
-pip install -r requirements.txt
+Bash
 
+pip install -r requirements.txt
 Train and evaluate a model:
 
-python train_model.py --model <model_type> --regularization <yes/no>
+Bash
 
-Example:
-
-python train_model.py --model cnn --regularization yes
-
+python train_model.py --model <model_type> --regularization <yes/no> 
+Example: python train_model.py --model cnn --regularization yes
 Future Improvements
 
-Optimize hyperparameters for better MAE and accuracy.
-
-Experiment with additional regularization techniques (e.g., dropout, batch normalization).
-
-Augment the dataset for improved generalization.
-
-Implement cross-validation for more reliable performance metrics.
-
-Contributions
-
-Contributions are welcome! Please follow the contribution guidelines and open a pull request.
+Optimize hyperparameters to improve MAE and accuracy.
+Experiment with additional regularization techniques (dropout, batch normalization).
+Augment the dataset to enhance generalization.
+Implement cross-validation for more robust performance metrics.
